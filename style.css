@@ -327,6 +327,50 @@ h2 {
 }
 .feature p { margin: 0; color: var(--muted); max-width: 32em; }
 
+.pillar {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  gap: 22px;
+  padding-block: 34px;
+  border-top: 1px solid var(--line);
+}
+.pillar:first-of-type { border-top: 0; padding-top: 0; }
+.pillar-num {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: grid;
+  place-items: center;
+  background: var(--signal);
+  color: var(--signal-ink);
+  border-radius: 8px;
+}
+.pillar h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: var(--step-2);
+  line-height: 1.15;
+  margin: 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+}
+.pillar p { margin: 0 0 14px; color: var(--muted); max-width: 40em; }
+.ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-width: 40em; }
+.ticks li { position: relative; padding-left: 26px; }
+.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 2px; top: 0.5em;
+  width: 10px; height: 6px;
+  border-left: 2.5px solid var(--good);
+  border-bottom: 2.5px solid var(--good);
+  transform: rotate(-45deg);
+}
+
 .how {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -416,6 +460,7 @@ h2 {
   .slip { transform: none; }
   .features, .how { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   section { padding-block: 56px; }
+  .pillar { grid-template-columns: minmax(0, 1fr); gap: 14px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
